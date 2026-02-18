@@ -1,12 +1,10 @@
 import pytest
 from pages import LoginPage, PerformanceTestsPage
+from utils.config import get_test_user
 
-# TODO: Get test credentials from env
-TEST_USER = "testuser"
-TEST_PASSWORD = "testpass"
+TEST_USER, TEST_PASSWORD = get_test_user()
 
 
-@pytest.mark.skip(reason="TODO: implement add-performance-test form fill and submit")
 def test_add_performance_test_appears_after_search(page, base_url: str) -> None:
     """Login -> Visit performance tests -> Add performance test -> Search -> Verify card."""
     # Login
@@ -19,11 +17,10 @@ def test_add_performance_test_appears_after_search(page, base_url: str) -> None:
     perf_page.goto()
     perf_page.click_add_performance_test()
 
-    # TODO: Fill the add-performance-test form and submit.
-    # Use a unique name, e.g. "E2E Perf Test Unique 456", then search and verify.
-
     test_name = "E2E Perf Test Unique 456"
-    # ... fill form and submit (locators depend on your UI) ...
+    perf_page.fill_performance_test_name(test_name)
+    perf_page.fill_performance_test_description("E2E Performance Test Description 456")
+    perf_page.click_save_performance_test()
 
     perf_page.search(test_name)
     cards = perf_page.get_performance_test_cards()

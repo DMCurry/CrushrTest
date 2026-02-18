@@ -22,8 +22,53 @@ class ExercisesPage(BasePage):
         return self.page.locator(".exercise-add-btn")
 
     @property
+    def exercise_name_input(self):
+        return self.page.locator("input[name='exercise_name']")
+
+    @property
+    def exercise_reps_input(self):
+        return self.page.locator("input[name='reps']")
+
+    @property
+    def exercise_sets_input(self):
+        return self.page.locator("input[name='sets']")
+
+    @property
+    def exercise_media_link_input(self):
+        return self.page.locator("input[name='link']")
+
+    @property
+    def exercise_description_input(self):
+        return self.page.locator("input[name='description']")
+
+    @property
     def exercise_cards(self):
         return self.page.locator(".exercise-details")
+
+    @property
+    def exercise_save_button(self):
+        return self.page.locator(".save-button")
+
+    def click_add_exercise(self) -> None:
+        self.add_exercise_button.click()
+
+    def fill_exercise_name(self, name: str) -> None:
+        self.exercise_name_input.fill(name)
+    
+    def fill_exercise_reps(self, reps: int) -> None:
+        self.exercise_reps_input.fill(reps)
+
+    def fill_exercise_sets(self, sets: int) -> None:
+        self.exercise_sets_input.fill(sets)
+
+    def fill_exercise_media_link(self, link: str) -> None:
+        self.exercise_media_link_input.fill(link)
+
+    def fill_exercise_description(self, description: str) -> None:
+        self.exercise_description_input.fill(description)
+
+    def click_save_exercise_button(self) -> None:
+        self.exercise_save_button.click()
 
     def search(self, query: str) -> None:
         self.search_input.fill(query)

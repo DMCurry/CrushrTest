@@ -5,7 +5,7 @@ from .base import BasePage
 class TrainingPlansPage(BasePage):
     path = "/training-plans"
 
-    def __init__(self, page: Page, base_url: str = "http://localhost:5713") -> None:
+    def __init__(self, page: Page, base_url: str = "http://localhost:5173") -> None:
         super().__init__(page, base_url)
 
     @property

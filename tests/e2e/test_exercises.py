@@ -1,12 +1,10 @@
 import pytest
 from pages import ExercisesPage, LoginPage
+from utils.config import get_test_user
 
-# TODO: Get test credentials from env
-TEST_USER = "testuser"
-TEST_PASSWORD = "testpass"
+TEST_USER, TEST_PASSWORD = get_test_user()
 
 
-@pytest.mark.skip(reason="TODO: implement add-exercise form fill and submit")
 def test_add_exercise_appears_after_search(page, base_url: str) -> None:
     """Login -> Visit exercises -> Add exercise -> Search -> Verify card appears."""
     # Login
@@ -19,12 +17,14 @@ def test_add_exercise_appears_after_search(page, base_url: str) -> None:
     exercises_page.goto()
     exercises_page.click_add_exercise()
 
-    # TODO: Fill the add-exercise form (modal or inline) and submit.
-    # Use a unique name so search is deterministic, e.g. name = "E2E Exercise Unique 123"
-    # Then call exercises_page.search(name) and assert the card is in get_exercise_cards().
 
     exercise_name = "E2E Exercise Unique 123"
-    # ... fill form with exercise_name and submit (locators depend on your UI) ...
+    exercises_page.fill_exercise_name(exercise_name)
+    exercises_page.fill_exercise_reps(5)
+    exercises_page.fill_exercise_sets(3)
+    exercises_page.fill_exercise_media_link("https://www.youtube.com/shorts/omG6jR4nuIs")
+    exercises_page.fill_exercise_description("Olympic Training Exercise (Planet Fitness Edition)")
+    exercises_page.click_save_exercise_button()
 
     exercises_page.search(exercise_name)
     cards = exercises_page.get_exercise_cards()

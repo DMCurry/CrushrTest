@@ -7,7 +7,7 @@ class BasePage:
     # Subclasses set this to the path after base_url, e.g. "/login" or ""
     path: str = "/"
 
-    def __init__(self, page: Page, base_url: str = "http://localhost:5713") -> None:
+    def __init__(self, page: Page, base_url: str = "http://localhost:5173") -> None:
         self.page = page
         self.base_url = base_url.rstrip("/")
 

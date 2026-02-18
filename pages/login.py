@@ -10,11 +10,11 @@ class LoginPage(BasePage):
 
     @property
     def email_input(self):
-        return self.page.get_by_label("Username")
+        return self.page.locator("form input[type='text']")
     
     @property
     def password_input(self):
-        return self.page.get_by_label("Password")
+        return self.page.locator("form input[type='password']")
     
     @property
     def submit_button(self):
@@ -22,6 +22,7 @@ class LoginPage(BasePage):
 
     def fill_credentials(self, email: str, password: str) -> None:
         self.email_input.fill(email)
+        print(email)
         self.password_input.fill(password)
     
     def submit(self) -> None:

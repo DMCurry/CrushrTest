@@ -5,7 +5,7 @@ import pytest
 @pytest.fixture(scope="session")
 def base_url() -> str:
     """App base URL. Set BASE_URL env var or defaults to localhost."""
-    return os.environ.get("BASE_URL", "http://localhost:5713")
+    return os.environ.get("BASE_URL", "http://localhost:5173")
 
 
 # TODO: Add a fixture that logs in and yields page (or storage state) so tests
