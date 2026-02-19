@@ -7,14 +7,18 @@ TEST_USER, TEST_PASSWORD = get_test_user()
 
 def test_add_performance_test_appears_after_search(page, base_url: str) -> None:
     """Login -> Visit performance tests -> Add performance test -> Search -> Verify card."""
+    page.goto(base_url) # Start fresh    
+
     # Login
     login_page = LoginPage(page, base_url)
     login_page.goto()
     login_page.login(TEST_USER, TEST_PASSWORD)
+    page.wait_for_url(f"{base_url}", timeout=15_000)
 
     # Visit performance tests and add one
     perf_page = PerformanceTestsPage(page, base_url)
-    perf_page.goto()
+    perf_page.nav_performance_tests_link.click()
+    page.wait_for_url(f"{base_url}/performance-tests", timeout=15_000)    
     perf_page.click_add_performance_test()
 
     test_name = "E2E Perf Test Unique 456"

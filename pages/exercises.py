@@ -43,7 +43,7 @@ class ExercisesPage(BasePage):
 
     @property
     def exercise_cards(self):
-        return self.page.locator(".exercise-details")
+        return self.page.locator(".exercise-details").locator(".exercise")
 
     @property
     def exercise_save_button(self):

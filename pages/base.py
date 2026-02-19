@@ -25,3 +25,11 @@ class BasePage:
     def nav_items(self):
         """The 5 <li> links inside nav > ul (one per page)."""
         return self.page.locator("nav ul li")
+
+    @property
+    def nav_exercises_link(self):
+        return self.nav_items.filter(has_text="Exercises").locator("a")
+
+    @property
+    def nav_performance_tests_link(self):
+        return self.nav_items.filter(has_text="Tests").locator("a")

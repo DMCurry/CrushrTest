@@ -7,14 +7,18 @@ TEST_USER, TEST_PASSWORD = get_test_user()
 
 def test_add_exercise_appears_after_search(page, base_url: str) -> None:
     """Login -> Visit exercises -> Add exercise -> Search -> Verify card appears."""
+    page.goto(base_url) # Start fresh    
+
     # Login
     login_page = LoginPage(page, base_url)
     login_page.goto()
     login_page.login(TEST_USER, TEST_PASSWORD)
+    page.wait_for_url(f"{base_url}", timeout=15_000)
 
     # Visit exercises and add a new exercise
     exercises_page = ExercisesPage(page, base_url)
-    exercises_page.goto()
+    exercises_page.nav_exercises_link.click()
+    page.wait_for_url(f"{base_url}/exercises", timeout=15_000)
     exercises_page.click_add_exercise()
 
 
