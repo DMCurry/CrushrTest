@@ -1,4 +1,3 @@
-import pytest
 from pages import ExercisesPage, LoginPage
 from utils.config import get_test_user
 

@@ -38,12 +38,3 @@ pytest tests/e2e -v --headed
 PWDEBUG=1 pytest tests/e2e/test_performance_tests.py -v
 ```
 
-**Override base URL**  
-```bash
-BASE_URL=http://localhost:5713 pytest tests/e2e -v
-```
-
-**Combine options**  
-```bash
-BASE_URL=http://localhost:5173 pytest tests/e2e -v -s --headed
-```
