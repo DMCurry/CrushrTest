@@ -39,7 +39,7 @@ class ExercisesPage(BasePage):
 
     @property
     def exercise_description_input(self):
-        return self.page.locator("input[name='description']")
+        return self.page.locator("textarea[name='description']")
 
     @property
     def exercise_cards(self):
@@ -55,10 +55,10 @@ class ExercisesPage(BasePage):
     def fill_exercise_name(self, name: str) -> None:
         self.exercise_name_input.fill(name)
     
-    def fill_exercise_reps(self, reps: int) -> None:
+    def fill_exercise_reps(self, reps: str) -> None:
         self.exercise_reps_input.fill(reps)
 
-    def fill_exercise_sets(self, sets: int) -> None:
+    def fill_exercise_sets(self, sets: str) -> None:
         self.exercise_sets_input.fill(sets)
 
     def fill_exercise_media_link(self, link: str) -> None:

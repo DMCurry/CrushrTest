@@ -20,8 +20,8 @@ def test_add_exercise_appears_after_search(page, base_url: str) -> None:
 
     exercise_name = "E2E Exercise Unique 123"
     exercises_page.fill_exercise_name(exercise_name)
-    exercises_page.fill_exercise_reps(5)
-    exercises_page.fill_exercise_sets(3)
+    exercises_page.fill_exercise_reps("5")
+    exercises_page.fill_exercise_sets("3")
     exercises_page.fill_exercise_media_link("https://www.youtube.com/shorts/omG6jR4nuIs")
     exercises_page.fill_exercise_description("Olympic Training Exercise (Planet Fitness Edition)")
     exercises_page.click_save_exercise_button()
