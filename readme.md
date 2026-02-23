@@ -2,15 +2,7 @@
 
 Playwright + pytest e2e tests for the Crushr application.
 
-## Prerequisites
-
-- Python venv activated
-- `pip install -r requirements.txt`
-- `playwright install` (browsers)
-- App running at `BASE_URL` (default `http://localhost:5173`)
-- `.env` with `TEST_USER`, `TEST_PASSWORD` (and optionally `BASE_URL`), or use `python-dotenv` and `load_dotenv()` in `conftest.py`
-
-## Test commands
+## Some useful test commands
 
 **Run all e2e tests (headless, non-debug)**  
 ```bash

@@ -13,3 +13,6 @@ def get_test_user() -> tuple[str, str]:
     user = os.environ.get("TEST_USER", "")
     password = os.environ.get("TEST_PASSWORD", "")
     return (user, password)
+
+
+TEST_USER, TEST_PASSWORD = get_test_user()

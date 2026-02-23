@@ -1,7 +1,6 @@
 from pages import ExercisesPage, LoginPage
-from utils.config import get_test_user
+from utils.config import TEST_USER, TEST_PASSWORD
 
-TEST_USER, TEST_PASSWORD = get_test_user()
 
 
 def test_add_exercise_appears_after_search(page, base_url: str) -> None:

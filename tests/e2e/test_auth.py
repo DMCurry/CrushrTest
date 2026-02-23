@@ -1,8 +1,6 @@
 from playwright.sync_api import expect
 from pages import HomePage, LoginPage
-from utils.config import get_test_user
-
-TEST_USER, TEST_PASSWORD = get_test_user()
+from utils.config import TEST_USER, TEST_PASSWORD
 
 
 def test_login_redirects_to_home(page, base_url: str) -> None:

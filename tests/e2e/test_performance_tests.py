@@ -1,8 +1,6 @@
 import pytest
 from pages import LoginPage, PerformanceTestsPage
-from utils.config import get_test_user
-
-TEST_USER, TEST_PASSWORD = get_test_user()
+from utils.config import TEST_USER, TEST_PASSWORD
 
 
 def test_add_performance_test_appears_after_search(page, base_url: str) -> None:
