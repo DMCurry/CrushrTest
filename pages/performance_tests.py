@@ -14,11 +14,11 @@ class PerformanceTestsPage(BasePage):
 
     @property
     def search_input(self):
-        return self.page.get_by_placeholder("Search performance tests...")
+        return self.page.get_by_test_id("search-bar")
 
     @property
     def add_performance_test_button(self):
-        return self.page.locator(".performance-test-add-btn")
+        return self.page.get_by_test_id("performance-test-add-btn")
 
     @property
     def performance_test_cards(self):
@@ -26,11 +26,11 @@ class PerformanceTestsPage(BasePage):
 
     @property
     def performance_test_name_input(self):
-        return self.page.locator("input[name='test_name']")
+        return self.page.get_by_test_id("performance-test-name")
 
     @property
     def performance_test_description_input(self):
-        return self.page.locator("textarea[name='description']")
+        return self.page.get_by_test_id("performance-test-description")
 
     @property
     def performance_test_save_button(self):

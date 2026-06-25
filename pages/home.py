@@ -11,11 +11,11 @@ class HomePage(BasePage):
     # --- Schedule grid (calendar-grid > calendar-day, each with h3, add-exercise-btn, exercise-container, performance-test-container) ---
     @property
     def schedule(self):
-        return self.page.locator(".calendar-grid")
+        return self.page.get_by_test_id("calendar-grid")
 
     @property
     def calendar_days(self):
-        return self.page.locator(".calendar-day")
+        return self.page.get_by_test_id("calendar-day")
 
     @property
     def schedule_save_button(self):

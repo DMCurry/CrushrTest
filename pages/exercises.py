@@ -15,31 +15,31 @@ class ExercisesPage(BasePage):
 
     @property
     def search_input(self):
-        return self.page.get_by_placeholder("Search exercises...")
+        return self.page.get_by_test_id("search-bar")
 
     @property
     def add_exercise_button(self):
-        return self.page.locator(".exercise-add-btn")
+        return self.page.get_by_test_id("exercise-add-btn")
 
     @property
     def exercise_name_input(self):
-        return self.page.locator("input[name='exercise_name']")
+        return self.page.get_by_test_id("exercise-name")
 
     @property
     def exercise_reps_input(self):
-        return self.page.locator("input[name='reps']")
+        return self.page.get_by_test_id("exercise-reps")
 
     @property
     def exercise_sets_input(self):
-        return self.page.locator("input[name='sets']")
+        return self.page.get_by_test_id("exercise-sets")
 
     @property
     def exercise_media_link_input(self):
-        return self.page.locator("input[name='link']")
+        return self.page.get_by_test_id("exercise-link")
 
     @property
     def exercise_description_input(self):
-        return self.page.locator("textarea[name='description']")
+        return self.page.get_by_test_id("exercise-description")
 
     @property
     def exercise_cards(self):
